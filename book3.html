@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BookStore</title>
+    
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a442f072cc.js" crossorigin="anonymous"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles1.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h2 class="logo">BOOKS <i class="fa-solid fa-store"></i> </h2>
+          <button
+            type="button"
+            class="navbar-toggle ml-auto"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4" id="section">
+          <img
+            src="book3.jpg"
+            class="img-responsive"
+          />
+        </div>
+        <div id="sectionone">
+          <h3>Les mésirables</h3>
+          <h4>Victor Hugo</h4>
+          <h4>Description:</h4>
+          <p>"Tant qu’il existera, par le fait des lois et des mœurs, une damnation sociale créant artificiellement, en pleine civilisation, des enfers, et compliquant d’une fatalité humaine la destinée qui est divine ; tant que les trois problèmes du siècle, la dégradation de l’homme par le prolétariat, la déchéance de la femme par la faim, l’atrophie de l’enfant par la nuit, ne seront pas résolus ; tant que, dans de certaines régions, l’asphyxie sociale sera possible ; en d’autres termes, et à un point de vue plus étendu encore, tant qu’il y aura sur la terre ignorance et misère, des livres de la nature de celui-ci pourront ne pas être inutiles."</p>
+          <p>Market Price: <strike> 1400Da</strike></p>
+          <p>Our price: <b>599Da</b></p>
+          <p>Edition</p>
+          <a href="#form"><button type="button" id="buynow">Buy Now</button> </a
+          >&nbsp; &nbsp;
+          <a href="index2.html"
+            ><button type="button" id="back">Back</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div id="form">
+          <form>
+            <h3>Shipping Details</h3>
+            <br />
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="No worries, your data is safe with us"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">Phone</label>
+              <input
+                type="number"
+                class="form-control"
+                id="phone"
+                name="phone"
+                placeholder="Preferrably your WhatsApp number, in order to receive order related details"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Alternate Phone</label>
+              <input
+                type="number"
+                class="form-control"
+                id="aphone"
+                name="aphone"
+                placeholder="Just in case we can't reach you on WhatsApp"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Email Id</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="To reach you in a formal way"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                name="address"
+                placeholder="To receive your order by weekend"
+                required
+              /><br />
+              <input
+                type="text"
+                class="form-control"
+                id="address1"
+                name="address1"
+                placeholder="Incase your address doesn't fit in one line"
+              /><br />
+              <input
+                type="text"
+                class="form-control"
+                id="address2"
+                name="address2"
+                placeholder="Incase your address doesn't fit in two lines"
+              />
+            </div>
+          </form>
+          <button id="place_order" onclick="showPopUpMessage()">Place Order*</button>
+          <br />
+          <em>*Only Payment on Delivery</em>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="footer" id="foot" style="background-color: black">
+      <div class="container">
+        <div class="row" id="column">
+           <a id="column">Contact Us</a>
+        </div>
+        <div id="media_spacing">
+          <ul id="media_icons">
+            <a id="links" href="https://www.facebook.com/It.Dead"
+              ><li id="media_list"><i class="fab fa-facebook"></i></li
+            ></a>
+            <a id="links" href=""
+              ><li id="media_list"><i class="fab fa-instagram"></i></li
+            ></a>
+            <a id="links" href=""
+              ><li id="media_list"><i class="fab fa-linkedin-in"></i></li
+            ></a>
+          </ul>
+        </div>
+
+        
+      </div>
+    </div>
+    <script src="js/pop-up.js" type="text/javascript"></script>
+    
+  </body>
+</html>
