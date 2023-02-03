@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Signstyle.css">
     <script src="https://kit.fontawesome.com/a442f072cc.js" crossorigin="anonymous"></script>
-
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    
-    
     <title>Signup</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
     
@@ -22,20 +21,26 @@
         <div class="form signup">
             <div class="form-content">
                 <header>Signup</header>
-                <form action="#">
+                <form action="#"  id="app" @submit="checkForm">
+                    <p v-if="errors.length">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul>
+  </p>
                     <div class="field input-field">
-                        <input type="text" placeholder="Name" class="input">
+                        <input type="text" placeholder="Name" class="input" v-model="name">
                     </div>
                     <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
+                        <input type="email" placeholder="Email" class="input" v-model="email">
                     </div>
                     
                     <div class="field input-field">
-                        <input type="password" placeholder="Password" class="password">
+                        <input type="password" placeholder="Password" class="password" v-model="password">
                         <i class="fa-solid fa-eye"></i>
                     </div>
                     <div class="field input-field">
-                        <input type="text" placeholder="Phone Number" class="input">
+                        <input type="number" placeholder="Phone Number" class="input" v-model="number">
                     </div>
 
                   
@@ -49,7 +54,7 @@
                     </div>
 
                     <div class="field button-field">
-                        <button>Signup</button>
+                         <button type="submit">Signup</button>
                     </div>
                 </form>
 
@@ -61,6 +66,41 @@
            
         </div>
     </section>
-    <script src="script.js"></script>
+    <script>
+ const app = new Vue({
+  el: '#app',
+  data: {
+    errors: [],
+    name: null,
+    number: null,
+    email: null,
+    password:null
+  },
+  methods:{
+    checkForm: function (e) {
+      if (this.name && this.number && this.email && this.password) {
+        return true;
+      }
+
+      this.errors = [];
+
+      if (!this.name) {
+        this.errors.push('Name required.');
+      }
+      if (!this.number) {
+        this.errors.push('phonenumber required.');
+      }
+      if (!this.email) {
+        this.errors.push('email required.');
+      }
+      if (!this.password) {
+        this.errors.push('password required.');
+      }
+
+      e.preventDefault();
+    }
+  }
+})
+    </script>
 </body>
 </html>
